@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+The first sentence is :
+<p id="0"></p>
+The length of first sentence :
+<p id="1"></p>
+That last sentence is :
+<p id="2"></p>
+The length of last sentence :
+<p id="3"></p>
+Sum of first and last sentence :
+<p id="4"></p>
+The number of sentence :
+<p id="5"></p>
+
+<textarea id="inputkata"></textarea>
+
+<button onclick="fungsi()">Start</button><br>
+
+<script>
+function fungsi(){
+	awalakhir();
+	bnykbaris();
+}
+
+s = document.getElementById("inputkata").value;
+lines = s.split("\n");
+
+function awalakhir() {
+    l1 = lines[0];
+    last = lines[lines.length - 1];
+    document.getElementById("0").innerHTML = l1;
+    document.getElementById("1").innerHTML = l1.split(" ").length;
+    document.getElementById("2").innerHTML = last;
+    document.getElementById("3").innerHTML = last.split(" ").length;
+    sum = l1.split(" ").length + last.split(" ").length;
+    document.getElementById("4").innerHTML = sum;
+}
+
+function bnykbaris() {
+	for (i=0;i<lines.length;i++){
+		document.getElementById("5").innerHTML += (i+1) + ". " + lines[i] + "<br>";;
+	}
+}
+</script>
+
+</body>
+</html>
